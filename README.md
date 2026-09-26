@@ -18,6 +18,17 @@ unmodified in `src/pico_hdmi/` (tag v0.0.19).
     each line.
 - Audio: 48 kHz, 16-bit stereo.
 
+## RP2040 and PIO DVI
+
+This library needs an RP2350 with an HSTX DVI port. It does not work on
+RP2040 boards such as the Feather RP2040 DVI, which drive DVI from PIO.
+
+[adafruit/PicoDVI](https://github.com/adafruit/PicoDVI), the PIO DVI
+library, has no audio, and adding it is not planned. If you need audio on
+PIO DVI anyway, the `dvi/` directory of
+[shuichitakano/pico_lib](https://github.com/shuichitakano/pico_lib/tree/master/dvi)
+shows one way to do it.
+
 ## Before you start
 
 - **Leave Tools > CPU Speed at 150 MHz.** `begin()` sets 252 MHz itself.
