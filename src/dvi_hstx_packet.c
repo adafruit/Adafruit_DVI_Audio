@@ -14,9 +14,12 @@
 // other core slows down. Declaring the encoder's functions and tables here
 // first puts the upstream definitions in RAM without editing the vendored
 // file, as dvi_video_output.c does for build_line_with_di.
-static const uint16_t ter_c4[16] __attribute__((section(".data.hdmi_ter_c4")));
-static const uint8_t bch_table[256] __attribute__((section(".data.hdmi_bch")));
-static const uint8_t parity_table[32] __attribute__((section(".data.hdmi_parity")));
+static const uint16_t ter_c4[16] __attribute__((section(".data.dvi_ter_c4")));
+static const uint8_t bch_table[256] __attribute__((section(".data.dvi_bch")));
+static const uint8_t parity_table[32] __attribute__((section(".data.dvi_parity")));
+static bool __not_in_flash_func(compute_parity)(uint8_t v);
+static bool __not_in_flash_func(compute_parity3)(uint8_t a, uint8_t b, uint8_t c);
+void __not_in_flash_func(hstx_packet_init)(hstx_packet_t *packet);
 static uint8_t __not_in_flash_func(encode_bch_3)(const uint8_t *p);
 static uint8_t __not_in_flash_func(encode_bch_7)(const uint8_t *p);
 static void __not_in_flash_func(compute_header_parity)(hstx_packet_t *p);
