@@ -1,0 +1,21 @@
+#######################################
+# Syntax Coloring Map for DVI Audio library
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+Adafruit_DVI_Audio	KEYWORD1
+Adafruit_DVI_Audio_GFX16	KEYWORD1
+ScanlineCallback	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+begin	KEYWORD2
+runCore1	KEYWORD2
+audioWrite	KEYWORD2
+audioAvailableForWrite	KEYWORD2
+sampleRate	KEYWORD2
