@@ -11,8 +11,7 @@
 // A flash cache miss there can overrun the line and desync HSTX for good
 // (frames then "complete" at ~138 Hz). Declaring it here first puts the
 // upstream definition in RAM without editing the vendored file.
-static uint32_t __not_in_flash_func(build_line_with_di)(uint32_t *buf,
-                                                        const uint32_t *di_words,
-                                                        bool vsync, bool active);
+static uint32_t __not_in_flash_func(build_line_with_di)(
+    uint32_t *buf, const uint32_t *di_words, bool vsync, bool active);
 
 #include "pico_hdmi/video_output.c.inc"

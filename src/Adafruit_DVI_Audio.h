@@ -49,8 +49,7 @@ private:
 
 // Adafruit_DVI_Audio with a 320x240 RGB565 GFX canvas (150 KB), shown
 // pixel-doubled to 640x480.
-class Adafruit_DVI_Audio_GFX16 : public Adafruit_DVI_Audio,
-                                 public GFXcanvas16 {
+class Adafruit_DVI_Audio_GFX16 : public Adafruit_DVI_Audio, public GFXcanvas16 {
 public:
   Adafruit_DVI_Audio_GFX16(void) : GFXcanvas16(320, 240) {}
 
