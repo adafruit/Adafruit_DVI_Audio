@@ -120,6 +120,14 @@ into RAM. It is called from the per-line video interrupt, and running it
 from flash at 252 MHz could desync the video. Keep that declaration when
 updating.
 
+`src/dvi_hstx_packet.c` and `src/dvi_hstx_data_island_queue.c` do the same
+for the audio path: the packet encoder, its three tables, and the queue's
+push and level functions. They run for every audio packet, about 11,000
+times a second at 44.1 kHz, and from flash they churn the XIP cache that
+the RP2350 shares with PSRAM, which slows whatever the other core runs from
+flash or PSRAM. Keep those declarations too, and check them against the
+upstream signatures after updating.
+
 ## License
 
 Adafruit's code is MIT. pico_hdmi is The Unlicense. Part of pico_hdmi is
